@@ -13,8 +13,11 @@ public class StaticTest
      }
      public static void main(String args[])
      {
+    	 
+    	 StaticTest st = new StaticTest();
          /*Below: I'm trying to create an object of the class
          which would intern call the constructor*/
          StaticTest obj = new StaticTest();
+         System.out.println(st instanceof Object);
      }
 }
