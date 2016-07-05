@@ -82,6 +82,6 @@ public class JobScheduler {
 
     @Test
     public void test(){
-    	jobSchedule()
+    	//jobSchedule();
     }
 }
