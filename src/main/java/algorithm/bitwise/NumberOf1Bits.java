@@ -26,7 +26,7 @@ public class NumberOf1Bits {
     	while (y != 0) {
     		ret++;
     		n = n ^ y;  // Remove 1 at this bit.
-    		y = n & ~ (n - 1); 
+    		y = n & ~ (n - 1);
     	}
     	
     	return ret;
