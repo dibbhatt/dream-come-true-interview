@@ -87,5 +87,4 @@ public class MutilatedChessboard {
 		List<List<Integer>> r = mc.getPlacements(8);
 		mc.printResult(8, r);
 	}
-	
 }
