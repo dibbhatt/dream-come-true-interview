@@ -10,7 +10,7 @@ public class ComputeParityTest {
 	@Test
 	public void testParity() {
 		ComputeParity cp = new ComputeParity();
-		assertEquals(0, cp.parity(0x1111));
+		assertEquals(0, cp.parityInt(0x1111));
 	}
     public static short parity(int x) {
 		int width = Integer.SIZE;

@@ -7,7 +7,7 @@ public class RectangleAreaTest {
 	@Test
 	public void testComputeArea() {
 		RectangleArea ra = new RectangleArea();
-		assertEquals( 16, ra.computeArea(-2, -2, 2, 2, -4, -2, -2, 2));
+		assertEquals( 24, ra.computeArea(-2, -2, 2, 2, -4, -2, -2, 2));
 		assertEquals( 19, ra.computeArea(-2, -2, 2, 2, -3, -3, -1, -1));
 	}
 }
