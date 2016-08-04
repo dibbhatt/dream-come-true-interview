@@ -1,5 +1,11 @@
 package algorithm.array;
 
+/**
+ * Description :
+ * Source : This problem is in **EPI chapter 6 section 6.1 page 62. Similar problem is in the Leetcode https://leetcode.com/problems/sort-colors/
+ * Created_By : xmpy
+ * Time : Aug 1, 2016 9:53:54 PM  
+ */
 public class SortColor {
 	public void swap(int[] nums, int i, int j) {
 	    if ( i == j ) {
