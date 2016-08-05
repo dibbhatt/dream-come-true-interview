@@ -28,9 +28,9 @@ public class BestTimeToBuyAndSellStockIV {
         for (int i = 1; i <= prices.length; i++) {
             for (int j = 1; j <= k; j++) {
                 states[i][j] = states[i - 1][j];   
-                for (int g = 1; g < i; g++) {
-                    int diff = prices[i - 1] - prices[g - 1];
-                    states[i][j] = Math.max(states[i][j], states[g - 1][j - 1] + diff);   
+                for (int x = 1; x < i; x++) {
+                    int diff = prices[i - 1] - prices[x - 1];
+                    states[i][j] = Math.max(states[i][j], states[x - 1][j - 1] + diff);   
                 }
             }
         }
