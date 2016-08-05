@@ -75,7 +75,7 @@ public class BestTimeToBuyAndSellStockIV {
 
          for (int i = 1; i <= prices.length; i++) {
              int diff = (i == 1) ? 0 : (prices[i - 1] - prices[i - 2]);
-        	 for (int j = k; j >= 0; j--) {
+        	 for (int j = k; j >= 1; j--) {
             	 locals[j] = Math.max(locals[j] + diff, states[j - 1] + diff);
                  states[j] = Math.max(locals[j], states[j]);   
              }
