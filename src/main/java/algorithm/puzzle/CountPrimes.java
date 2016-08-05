@@ -83,4 +83,31 @@ public class CountPrimes {
         }
         return count;
     }
+    
+    // Accepted solution
+    public int countPrimesSaveSpace(int n) {
+        if ( n <= 2) {
+            return 0;
+        } 
+        int count = 1; 
+        boolean[] state = new boolean[n/2 - 1];
+        
+        for (int i = 0; i< (n/2 - 1); i++) {
+            state[i] =  true;
+        }
+        
+        for (int i = 3; i <= Math.sqrt(n - 1); i = i + 2) {
+            if (state[i/2 - 1]) {
+                for (int j = i; j <= ((n - 1)/i); j++) {
+                    state[(i * j) / 2 - 1] = false;
+                }                
+            }       
+        }
+        for (int i = 0; i < (n/2 - 1); i++) {
+            if (state[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
