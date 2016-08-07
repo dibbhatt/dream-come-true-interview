@@ -12,6 +12,7 @@ public class CountPrimesTest {
 		assertEquals(0, cp.countPrimesBruteForce2(2));
 		cp = new CountPrimes();
 		assertEquals(2, cp.countPrimesBruteForce2(4));
+		assertEquals(2, cp.countPrimesSaveSpace(4));
 
 		
 	}
