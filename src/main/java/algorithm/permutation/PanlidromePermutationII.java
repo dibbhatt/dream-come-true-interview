@@ -63,7 +63,7 @@ public class PanlidromePermutationII {
            return;
         }
         
-        for (int num : countMap.keySet()) {
+        for (char num : countMap.keySet()) {
             if (countMap.get(num) != 0) {
                 curr.add(num);
                 countMap.put(num, countMap.get(num) - 1);
