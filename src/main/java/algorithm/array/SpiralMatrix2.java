@@ -1,62 +1,58 @@
 package algorithm.array;
 
-import org.junit.Test;
-
-/** 
- * Created_By : zhaoxm (xmpy) 
- * Date : 2014-9-9 
- * Time : 上午12:19:47
+import java.util.ArrayList;
+import java.util.List;
+/**
+ * Description :
+ * Source : https://leetcode.com/problems/spiral-matrix/
+ * Created_By : xmpy
+ * Time : Aug 15, 2016 9:53:54 PM  
  */
 public class SpiralMatrix2 {
-    public int[][] generateMatrix(int n) {
-        
-        int [][] result = new int[n][n];
-        int next = 1;
-        
-        int start_x = 0; int start_y = 0;
-        int end_x = n - 1; int end_y = n - 1;
-        
-        while(start_x <= end_x && start_y <= end_y) {
-            for (int i = start_y; i <= end_y; i++) {
-                result[start_x][i] = next;
-                next++;
-            }
-            
-            for (int i = start_x + 1; i < end_x; i++) {
-                result[i][end_y] = next;
-                next++;
-            }
-            
-            if (start_x != end_x) {
-                for (int i = end_y; i >= start_y; i--) {
-                    result[end_x][i] = next;
-                    next++;
-                }
-            }
-            
-            if (start_y != end_y) {
-                for(int i = end_x - 1; i > start_x; i--) {
-                    result[i][start_x] = next;
-                    next++;
-                }
-            }
-            start_x += 1; start_y += 1;
-            end_x -= 1; end_y -= 1;
-        }
-        return result;
-    }
+    private static int[][] steps = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
     
-    @Test
-    public void test(){
-    	int n = 4;
-    	int[][] result = generateMatrix(4);
-    	
-    	for (int i = 0; i < n; i++) {
-    		for (int j = 0; j < n; j++) {
-    			System.out.print(" ");
-    			System.out.print(result[i][j]);
-    		}
-    		System.out.println();
-    		}
+    public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return res;
+        }
+        int offset = 0;
+        int m = matrix.length;
+        int n = matrix[0].length;
+        
+        int circleCount = Math.min(m, n) / 2;
+        
+        for (; offset < circleCount; offset++) {
+            int x = offset;
+            int y = offset;
+            for (int direction = 0; direction < 4; direction++) {
+                 int stepCount = n - 2 * offset - 1;
+                 if (direction == 1 || direction ==3) {
+                     stepCount = m - 2 * offset - 1;
+                 }
+                 
+                 for (int i = 0; i < stepCount; i++) {
+                    res.add(matrix[x][y]);
+                    x += steps[direction][0];
+                    y += steps[direction][1];
+                 }
+            }
+        }
+        
+        if (n % 2 != 0) {
+        	if (m > n) {
+        		for (int i = offset; i < m - offset; i++) {
+        			res.add(matrix[i][offset]);
+        		}
+        	} else if (m < n) {
+        		for (int i = offset; i < n - offset; i++) {
+        			res.add(matrix[offset][i]);
+        		}
+        	} else {
+        		res.add(matrix[offset][offset]);
+        	}
+        }
+        
+        return res; 
     }
 }
