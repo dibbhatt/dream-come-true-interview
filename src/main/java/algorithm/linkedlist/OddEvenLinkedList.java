@@ -28,7 +28,7 @@ public class OddEvenLinkedList {
             oddP = odd;
         }
         evenP.next = null;
-        oddP.next = evenHead;
+        oddP.next = evenHead.next;
         return oddHead.next;
     }
 }

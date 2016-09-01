@@ -4,7 +4,7 @@ import org.junit.Test;
 
 /** 
  * Description :
- * Source : 宜信大数据面试
+ * Source : 宜信大数据面试 https://leetcode.com/problems/find-peak-element/
  * Created_By : zhaoxm (xmpy) 
  * Date : 2014-10-14 
  * Time : 下午7:53:41
