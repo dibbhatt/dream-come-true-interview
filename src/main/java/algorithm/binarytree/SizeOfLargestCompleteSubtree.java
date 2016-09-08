@@ -1,6 +1,12 @@
 package algorithm.binarytree;
 
 
+/**
+ * Description :
+ * Source : 
+ * Created_By : xmpy
+ * Time : Sep 7, 2016 10:45:41 PM  
+ */
 public class SizeOfLargestCompleteSubtree {
 	public static class ResultType {
 		public int height = 0; 
